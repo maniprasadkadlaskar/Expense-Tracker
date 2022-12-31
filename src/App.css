@@ -1,0 +1,283 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* remove default anchor decoration  */
+a {
+  text-decoration: none;
+  color: black;
+}
+
+/* black background  */
+.bg-black {
+  background-color: #1e1e24;
+}
+
+/* white text  */
+.text-white {
+  color: white;
+}
+
+/* red-text  */
+.text-red {
+  color: rgb(234, 4, 4);
+}
+
+/* navbar style  */
+.navbar {
+  padding: 10px;
+}
+
+.navbar .brand-logo img {
+  width: 40px;
+  height: 40px;
+}
+
+.navbar .brand-name {
+  padding: 0 4px;
+  font-family: 'Dosis', sans-serif;
+  font-size: xx-large;
+}
+
+.content-container {
+  padding: 6% 8%;
+  text-align: -webkit-center;
+}
+
+.main-text-content {
+  padding: 4% 2%;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.text-content {
+  margin: 10px;
+  font-size: medium;
+}
+
+.content-header {
+  margin: 10px;
+  font-size: x-large;
+}
+
+footer .contact-container {
+  margin: 20px;
+}
+
+footer .contact {
+  padding: 10px;
+  color: white;
+  font-size: x-large;
+}
+
+.container {
+  display: flex;
+  min-height: 30em;
+}
+
+.container .sidebar {
+  text-align: -webkit-center;
+  padding: 1em 2em;
+  /* border: 1px solid black; */
+}
+
+.text-description {
+  color: grey;
+}
+
+.container .main-content-container {
+  width: 100%;
+  /* margin: 3em; */
+  padding: 0.4em 1.5em;
+  /* border: 1px solid black; */
+}
+
+.main-item-container {
+  display: inline-flex;
+}
+
+.box-container {
+  margin: 2rem 10rem;
+}
+
+.margin-around {
+  margin: 20px 10px;
+}
+
+.action-pill {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  border: 1px solid black;
+  width: 120px;
+  border-radius: 10px;
+  background-color: #5f5fff;
+  color: white;
+  cursor: pointer;
+}
+
+.container .main-content-container .main-header {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.content-pill {
+  display: block;
+  /* margin: 15px; */
+  padding: 10px;
+  border: 1px solid black;
+  width: 100px;
+  border-radius: 10px;
+  background-color: #5f5fff;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+}
+
+.container .component-content {
+  justify-content: space-between;
+}
+
+.container .sub-container {
+  display: flex;
+  gap: 15px;
+}
+
+.box-pill {
+  margin: 5px;
+  padding: 15px 20px;
+  font-size: larger;
+  text-align: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  color: white;
+  background-color: #5f5fff;
+}
+
+.float-right {
+  justify-content: right;
+}
+
+.container .component-content {
+  margin: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 0 0 2px #000;
+}
+
+.form-content {
+  margin: .5em;
+  padding: .5em;
+}
+
+.form-content div {
+  padding: 3px 2px;
+  display: grid;
+}
+
+input , textarea {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: medium;  
+}
+
+input {
+  width: 30rem;
+}
+
+textarea {
+  width: 30rem;
+  height: 8rem;
+}
+
+/* align in row  */
+.form-content .form-buttons {
+  display: flex;
+  gap: 5px;
+}
+
+.component-align {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* drop-down menu */
+.dropdown-menu {
+  margin: 1px;
+  padding: 1px;
+  display: none;
+}
+
+.loader {
+  position: absolute;
+  right: 43%;
+  top: 50%;
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #5f5fff;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* For alignment of side-bar  */
+@media only screen and (max-width: 808px) {
+  .container {
+    display: block;
+  }
+
+  .main-item-container {
+    display: block;
+  }
+
+  .dropdown-menu {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+  }
+
+  .active-menu {
+    display: block;
+  }
+
+  .option-container {
+    display: none;
+  }
+}
+
+/* To fit form-fields  */
+@media only screen and (max-width: 550px) {
+  input {
+    width: 18rem;
+  }
+  
+  textarea {
+    width: 18rem;
+    height: 8rem;
+  }
+}
+
