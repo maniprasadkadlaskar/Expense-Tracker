@@ -30,6 +30,7 @@ const ExpenseCard = ({ expenseData , deleteHandler }) => {
                 <div className='box-pill'>
                     <div>{getMonthName(new Date(expenseData.date).getMonth())}</div>
                     <div>{new Date(expenseData.date).getDate()}</div>
+                    <div>{new Date(expenseData.date).getFullYear()}</div>
                 </div>
                 <div className='content-header'>
                     <span>{expenseData.title}</span>

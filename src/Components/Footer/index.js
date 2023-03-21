@@ -10,7 +10,7 @@ const Footer = () => {
 
             <div className='text-content'>
                 <span>Expense Tracker is human expenses tracking web application. This application helps user to track his day today
-                    expenses. This web application is designed and develepod by Maniprasad kadlaskar.
+                    expenses. This web application is designed and developed by Maniprasad kadlaskar.
                 </span>
             </div>
             

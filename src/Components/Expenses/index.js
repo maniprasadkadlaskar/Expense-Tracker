@@ -42,7 +42,7 @@ const Expenses = () => {
 
             <div className='main-content'>
                 {expenseDataList.length !== 0 ? expenseDataList.map((expenseData , index) => <ExpenseCard key={index} expenseData={expenseData} deleteHandler={deleteHandler}/>) 
-                : ( <div className='loader'></div> )}
+                : ( <div className='middle-content'>No data found</div> )}
             </div>
         </div>
     )

@@ -24,7 +24,7 @@ const SignIn = () => {
         e.preventDefault()
         login(formData.email , formData.password)
         .then((data) => {
-            if(data.status === 'ok') navigate('/dashboard/expenses')
+            if(data.status === 'ok') navigate('/dashboard/expenses' , { replace : true })
         })
         .catch(err => setError(err.message))
         resetHandler()

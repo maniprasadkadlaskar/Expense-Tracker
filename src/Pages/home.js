@@ -1,6 +1,7 @@
 import React from "react"
 import { Link, useNavigate } from 'react-router-dom'
-import { loginWithGoogle, initialAuth } from "../Config"
+import { loginWithGoogle } from "../Config"
+import { auth } from "../firebase-config"
 
 const Home = () => {
     const navigate = useNavigate()
@@ -18,7 +19,7 @@ const Home = () => {
     }
 
     const authHandler = () => {
-        initialAuth() ? navigate('/dashboard/expenses') : navigate('/signin')
+        auth.currentUser ? navigate('/dashboard/expenses') : navigate('/signin')
     }
 
     return (
@@ -32,7 +33,7 @@ const Home = () => {
             <div className='action-pill margin-around' onClick={authHandler}>
                 <span>Dashboard</span>
             </div>
-            <div className='main-item-container option-container'>
+            {/* <div className='main-item-container option-container'>
                 <div className='margin-around'>
                     <Link className='action-pill' to='/signup'><span>Sign up</span></Link>
                 </div>
@@ -42,7 +43,7 @@ const Home = () => {
                 <div className='margin-around action-pill' onClick={googleLoginHandler}>
                     <span><i className="bi bi-google"></i> Google</span>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -1,47 +1,43 @@
 import React, { useState } from 'react'
-// import { onAuthStateChanged } from 'firebase/auth'
 import { Link } from 'react-router-dom'
 import { logout } from '../../Config'
-// import { auth } from '../../firebase-config'
-import { useNavigate } from 'react-router-dom'
+import { auth } from '../../firebase-config'
 
 const SideBar = () => {
     
-    const navigate = useNavigate()
     const [activeMenu , setActiveMenu] = useState('menu')
-    const [icon , setIcon] = useState('bi bi-chevron-down')
+    const [icon , setIcon] = useState('bi bi-list')
 
     const logoutHandler = () => {
         logout()
-        navigate('/')
     }
 
     const menuHandler = () => {
         if(activeMenu === 'menu') {
             setActiveMenu('active-menu') 
-            setIcon('bi bi-chevron-up')
+            setIcon('bi bi-x-lg')
         }
         else {
             setActiveMenu('menu')
-            setIcon('bi bi-chevron-down')
+            setIcon('bi bi-list')
         }
     }
 
     return (
         // side-bar 
         <div className='sidebar'>
-            <div className='content-header'>
-                <span>Dashboard</span>
-            </div>
-            <div className='component-align'>
-                <div>
-                    <span>{localStorage.getItem('email')}</span>
-                </div>
+            <div>
                 <div className='dropdown-menu' onClick={menuHandler}>
                     <span><i className={icon}></i></span>
                 </div>
+                <div className='content-header'>
+                    <span>Dashboard</span>
+                </div>
             </div>
             <div className={activeMenu}>
+                <div>
+                    <span>{auth.currentUser.email}</span>
+                </div>
                 <div className='action-pill margin-around' onClick={logoutHandler}>
                     <span>Log out</span>
                 </div>
