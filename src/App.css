@@ -94,7 +94,7 @@ footer .contact {
 .container .main-content-container {
   width: 100%;
   /* margin: 3em; */
-  padding: 0.4em 1.5em;
+  padding: 0.5em 0.8em;
   /* border: 1px solid black; */
 }
 
@@ -250,9 +250,9 @@ textarea {
     display: block;
   }
 
-  .option-container {
+  /* .option-container {
     display: none;
-  }
+  } */
 
 }
 
