@@ -9,7 +9,7 @@ import {
 } from 'firebase/auth'
 import { db } from '../firebase-config'
 
-const provider = new GoogleAuthProvider()
+const googleProvider = new GoogleAuthProvider()
 
 // To fetch collection data
 export const fetchData = async (setExpenseDataList) => {
@@ -85,7 +85,7 @@ export const logout = async () => {
 // To login with google 
 export const loginWithGoogle = async () => {
     try {
-        await signInWithPopup(auth , provider)
+        await signInWithPopup(auth , googleProvider)
     }
     catch (err) {
         console.log(err.message)

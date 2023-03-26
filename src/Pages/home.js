@@ -1,22 +1,9 @@
 import React from "react"
 import { useNavigate } from 'react-router-dom'
-// import { loginWithGoogle } from "../Config"
 import { auth } from "../firebase-config"
 
 const Home = () => {
     const navigate = useNavigate()
-
-    // const googleLoginHandler = () => {
-    //     try{
-    //         loginWithGoogle()
-    //         .then(() => {
-    //             navigate('/dashboard/expenses')
-    //         })
-    //     }
-    //     catch (err) {
-    //         console.log(err.message)
-    //     }
-    // }
 
     const authHandler = () => {
         auth.currentUser ? navigate('/dashboard/expenses') : navigate('/signin')
@@ -33,17 +20,6 @@ const Home = () => {
             <div className='action-pill margin-around' onClick={authHandler}>
                 <span>Dashboard</span>
             </div>
-            {/* <div className='main-item-container option-container'>
-                <div className='margin-around'>
-                    <Link className='action-pill' to='/signup'><span>Sign up</span></Link>
-                </div>
-                <div className='margin-around'>
-                    <Link className='action-pill' to='/signin'><span>Sign in</span></Link>
-                </div>
-                <div className='margin-around action-pill' onClick={googleLoginHandler}>
-                    <span><i className="bi bi-google"></i> Google</span>
-                </div>
-            </div> */}
         </div>
     )
 }

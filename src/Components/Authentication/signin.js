@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { Link, useNavigate } from 'react-router-dom'
 import { login } from '../../Config'
+import OtherAuth from "./other"
 
 const SignIn = () => {
 
@@ -70,6 +71,7 @@ const SignIn = () => {
                     <Link to='/signup'>Click here</Link>
                 </div>
             </form>
+            <OtherAuth/>
         </div>
     )
 }
