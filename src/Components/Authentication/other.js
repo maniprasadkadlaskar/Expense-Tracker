@@ -21,11 +21,11 @@ const OtherAuth = () => {
     return (
         <>
             <div className="text-content">
-                <span>Signin with google</span>
+                <span>or</span>
             </div>
             <div className='main-item-container'>
-                <div className='margin-around action-pill'>
-                    <span onClick={googleLoginHandler}><i className="bi bi-google"></i> Google</span>
+                <div className='margin-around content-pill'>
+                    <span onClick={googleLoginHandler}>Sign in with <i className="bi bi-google"></i> Google</span>
                 </div>
             </div>
         </>
