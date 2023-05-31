@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app"
 import { getFirestore } from '@firebase/firestore'
 import { getAuth } from 'firebase/auth'
-require('dotenv').config()
 
 // App Firebase configuration
 const firebaseConfig = {
