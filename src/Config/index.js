@@ -16,8 +16,6 @@ export const fetchData = async (setExpenseDataList) => {
     const expenseCollection = collection(db , auth.currentUser.uid)
     const q = query(expenseCollection , orderBy('date' , 'desc'))
     const data = await getDocs(q)
-
-    console.log(data.docs[0].data());
     
     setExpenseDataList(data.docs.map((doc) => ({
         ...doc.data(),
@@ -38,6 +36,20 @@ export const fetchDataById = async (id , setFormData) => {
             })
         }
     })
+}
+
+// To fetch filtered data 
+export const fetchFilteredData = async (setExpenseDataList , search) => {
+    const expenseCollection = collection(db , auth.currentUser.uid)
+    const q = query(expenseCollection , orderBy('date' , 'desc'))
+    const data = await getDocs(q)
+
+    setExpenseDataList (
+        data.docs.filter((doc) => doc.data().title.toLowerCase().includes(search) && doc).map((doc) => ({
+            ...doc.data(),
+            id : doc.id
+        }))
+    )
 }
 
 // To post document

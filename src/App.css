@@ -228,6 +228,15 @@ textarea {
   font-size: larger;
 }
 
+.search-box {
+  font-size: medium;
+  margin: 0;
+  margin-top: 10px;
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #5f5fff;
+}
+
 /* For alignment of side-bar  */
 @media only screen and (max-width: 808px) {
   .container {
