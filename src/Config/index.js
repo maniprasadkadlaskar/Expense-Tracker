@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs, updateDoc, doc, deleteDoc } from 'firebase/firestore'
+import { addDoc, collection, getDocs, updateDoc, doc, deleteDoc, orderBy, query } from 'firebase/firestore'
 import { auth } from '../firebase-config'
 import { 
     createUserWithEmailAndPassword, 
@@ -14,7 +14,10 @@ const googleProvider = new GoogleAuthProvider()
 // To fetch collection data
 export const fetchData = async (setExpenseDataList) => {
     const expenseCollection = collection(db , auth.currentUser.uid)
-    const data = await getDocs(expenseCollection)
+    const q = query(expenseCollection , orderBy('date' , 'desc'))
+    const data = await getDocs(q)
+
+    console.log(data.docs[0].data());
     
     setExpenseDataList(data.docs.map((doc) => ({
         ...doc.data(),
