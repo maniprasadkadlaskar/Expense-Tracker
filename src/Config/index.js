@@ -45,7 +45,7 @@ export const fetchFilteredData = async (setExpenseDataList , search) => {
     const data = await getDocs(q)
 
     setExpenseDataList (
-        data.docs.filter((doc) => doc.data().title.toLowerCase().includes(search) && doc).map((doc) => ({
+        data.docs.filter((doc) => doc.data().title.toLowerCase().includes(search.toLowerCase()) && doc).map((doc) => ({
             ...doc.data(),
             id : doc.id
         }))
