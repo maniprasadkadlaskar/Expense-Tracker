@@ -24,7 +24,7 @@ const ExpenseForm = () => {
         title : '',
         description : '',
         amount : 0,
-        date : ''
+        date : new Date().toLocaleDateString('en-CA')
     })
 
     // Updating form field state 
@@ -33,6 +33,7 @@ const ExpenseForm = () => {
             ...formData,
             [e.target.name] : e.target.value
         })
+
     }
 
     // Form submission 
